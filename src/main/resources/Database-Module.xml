@@ -8,18 +8,29 @@
 	        <value>classpath:zxjdbc.properties</value>
 	    </property>
 	</bean>
-
-	<bean id="helloBean" class="com.zhenxin.medicine.authentication.HelloWorld">
-		<property name="name" value="Ivan"/>
-	</bean>
-	
+		
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${zx.driver.class.name}"/>
 		<property name="url" value="${zx.url}" />
 		<property name="username" value="${zx.username}" />
 		<property name="password" value="${zx.password}" />
 	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<bean id="drugDao" class="com.zhenxin.medicine.authentication.DrugItemDaoImpl">
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="getDrugSql" value="select * from Drug_Data where Drug_ID = 1"/>
+	</bean>
 	
+	
+
+	<bean id="helloBean" class="com.zhenxin.medicine.authentication.HelloWorld">
+		<property name="name" value="Ivan"/>
+	</bean>
+
 	
 
 </beans>

@@ -13,10 +13,9 @@ public class AuthenticationConnector {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"Database-Module.xml");
- 
-		HelloWorld obj = (HelloWorld) context.getBean("helloBean");
-		
-		obj.printHello();
+		DrugItemDaoImpl dao = (DrugItemDaoImpl) context.getBean("drugDao");
+		DrugItem drugItem = dao.getDrugById(1);
+		System.out.println(drugItem.toString());
 
 	}
 

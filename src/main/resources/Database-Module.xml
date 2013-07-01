@@ -20,17 +20,17 @@
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
-	<bean id="drugDao" class="com.zhenxin.medicine.authentication.DrugItemDaoImpl">
+	<bean id="drugDao" class="com.zhenxin.medicine.authentication.drug.DrugItemDaoImpl">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 		<property name="getDrugSql" value="select * from Drug_Data where Drug_ID = 1"/>
 	</bean>
 	
-	
-
-	<bean id="helloBean" class="com.zhenxin.medicine.authentication.HelloWorld">
-		<property name="name" value="Ivan"/>
+	<bean id="productDao" class="com.zhenxin.medicine.authentication.product.ProductItemDaoImpl" >
+		<property name="jdbcTemplate" ref="jdbcTemplate" />
+		<property name="getProductSql" value="select * from Product_Table where Product_ID = ?" />
+		<property name="addProductSql" value="insert into Product_Table (Product_Name, Drug_Key, Product_Serial, Checked, Valid_Until, Entered_On, Entered_By) values (?,?,?,?,?,?,?)" />
+		<property name="updateProductSql" value="update Product_Table set Checked = ? where Product_ID = ?" />
 	</bean>
-
 	
 
 </beans>

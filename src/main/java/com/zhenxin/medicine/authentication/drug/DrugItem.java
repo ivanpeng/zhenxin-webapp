@@ -1,4 +1,4 @@
-package com.zhenxin.medicine.authentication;
+package com.zhenxin.medicine.authentication.drug;
 
 public class DrugItem {
 	

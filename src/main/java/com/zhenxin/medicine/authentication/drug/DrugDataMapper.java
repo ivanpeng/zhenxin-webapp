@@ -1,4 +1,4 @@
-package com.zhenxin.medicine.authentication;
+package com.zhenxin.medicine.authentication.drug;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

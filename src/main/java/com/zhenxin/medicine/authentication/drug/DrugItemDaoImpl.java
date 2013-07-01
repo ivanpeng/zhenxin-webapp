@@ -1,29 +1,36 @@
-package com.zhenxin.medicine.authentication;
+package com.zhenxin.medicine.authentication.drug;
 
 import java.util.List;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 
-public class DrugItemDaoImpl implements DrugDao {
+import com.zhenxin.medicine.authentication.RefDataDao;
+
+public class DrugItemDaoImpl implements RefDataDao<DrugItem> {
 
 	private JdbcTemplate jdbcTemplate;
 	private String getDrugSql;
 	
-	public DrugItem getDrugById(int id) {
+	public DrugItem getRefDataById(int id) {
 		String query = getDrugSql.replace("?", String.valueOf(id));
 		List<DrugItem> list = jdbcTemplate.query(query, new DrugDataMapper());
 		// Return the first in the list for now, as we are only looking for one result
 		return list.get(0);
 	}
 
-	public void addDrugItem(DrugItem drugItem) {
+	public void addItem(DrugItem drugItem) {
 		// TODO Auto-generated method stub
 
 	}
 
-	public void removeDrugItem(DrugItem drugItem) {
+	public void removeItem(DrugItem drugItem) {
 		// TODO Auto-generated method stub
 
+	}
+
+	public void updateItemById(int id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	public String getGetDrugSql() {
@@ -42,7 +49,6 @@ public class DrugItemDaoImpl implements DrugDao {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-
 	
 	
 }

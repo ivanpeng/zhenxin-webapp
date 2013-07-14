@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,29 +18,5 @@ Drug ID (for now, can only enter 1): <input type="text" name="drugId" >
 <input type="submit" value="Submit"">
 </form>
 </body>
-=======
-<%@page import="com.zhenxin.medicine.authentication.HelloWorld"%>
-<html>
- <body>
- <h2>Fancy Clock</h2>
- <%= HelloWorld.Hi() %>
- <%
- 
- 
- 
- %>
- </body>
->>>>>>> branch 'web' of git@1.clownload.com:/home/git/authentication.git
-</html>
-<%@page import="com.zhenxin.medicine.authentication.HelloWorld"%>
-<html>
- <body>
- <h2>Fancy Clock</h2>
- <%= HelloWorld.Hi() %>
- <%
- 
- 
- 
- %>
- </body>
+
 </html>
